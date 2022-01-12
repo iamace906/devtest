@@ -1,0 +1,6 @@
+SELECT b.book_name As BookName, CONCAT(a.first_name , ' ' , a.last_name) As AuthorName,
+       b.publish_date As PublishDate FROM books as b 
+       INNER JOIN authors as a 
+       ON b.author_id = a.id 
+       WHERE b.publish_date BETWEEN '2021-01-01' AND '2021-01-31'
+       ORDER BY b.publish_date DESC LIMIT 1
