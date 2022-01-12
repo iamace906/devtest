@@ -1,6 +1,6 @@
 <?php
 
-namespace Vendor\ModuleName\Model\ProductInformation;
+namespace Vendor\ModuleName\Model; // Removed ProductInformation
 
 use Magento\Catalog\Model\ProductRepository;
 use Magento\Framework\Event\Manager;
@@ -53,7 +53,7 @@ class ProductInformation
     public function getProductsData()
     {
         $productData = [];
-        foreach ($this->productSkus as $sku) {
+        foreach ($this->productSku as $sku) {// Removed 's' in productSku as 'productSkus' is not declared.
             $product = $this->productRepository->get($sku);
             $productData[$product->getId()] = [
                 'name' => $product->getName(),
